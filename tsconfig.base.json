@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2021",
     "importHelpers": true,
     "module": "commonjs",
     "moduleResolution": "node",
@@ -17,6 +17,11 @@
     "allowJs": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@aionx/bootstrap": ["libs/bootstrap/src/index.ts"],
+      "@aionx/config": ["libs/config/src/index.ts"],
+      "@aionx/nest-typed-config": ["packages/nest-typed-config/src/index.ts"]
+    }
   }
 }
