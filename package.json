@@ -2,17 +2,53 @@
   "name": "@aionx-v20rc/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "packageManager": "pnpm@9.3.0",
+  "volta": {
+    "node": "20.16.0",
+    "pnpm": "9.3.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "test:all": "nx affected:test --all --codeCoverage --skip-nx-cache",
+    "prepare": "husky install",
+    "sherif:ws": "pnpm dlx sherif@latest",
+    "sherif:ws-fix": "pnpm dlx sherif@latest --fix",
+    "clean": "git clean -xdf node_modules",
+    "clean-all": "pnpm run clean && pnpm recursive exec rm -rf node_modules",
+    "nx-show-project": "pnpm nx show project @aiofc-nx/source --web",
+    "nx-graph": "pnpm nx graph"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
-    "@nx/js": "20.0.7",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/config-nx-scopes": "^19.5.0",
+    "@nestjs/schematics": "^10.0.1",
+    "@nx/devkit": "20.0.0-rc.0",
+    "@nx/eslint": "20.0.0-rc.0",
+    "@nx/eslint-plugin": "20.0.0-rc.0",
+    "@nx/jest": "20.0.0-rc.0",
+    "@nx/js": "20.0.0-rc.0",
+    "@nx/nest": "20.0.0-rc.0",
+    "@nx/node": "20.0.0-rc.0",
+    "@nx/plugin": "20.0.0-rc.0",
+    "@nx/workspace": "20.0.0-rc.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
-    "nx": "20.0.7",
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.2.1",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "nx": "20.0.0-rc.0",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.5.2"
-  }
+  },
+  "dependencies": {}
 }
