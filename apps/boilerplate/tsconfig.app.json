@@ -4,8 +4,11 @@
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
     "types": ["node"],
+    "composite": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "target": "es2021"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "../../libs/**/*.ts"],
+  "references": [{ "path": "../../libs/config/tsconfig.lib.json" }]
 }
