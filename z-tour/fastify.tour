@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "fastify",
+  "steps": [
+    {
+      "file": "apps/boilerplate/src/main.ts",
+      "description": "通过泛型参数指定NestFactory.create使用fastify作为http-server",
+      "line": 11
+    }
+  ]
+}

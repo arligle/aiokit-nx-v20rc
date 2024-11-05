@@ -9,5 +9,8 @@
     "declaration": true,
     "target": "es2021"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "../../packages/**/*.ts", "../../libs/**/*.ts"],
+  "references": [
+    { "path": "../../libs/logger/tsconfig.lib.json" }
+  ]
 }

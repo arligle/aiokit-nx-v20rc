@@ -2,7 +2,7 @@ import { ROOT_CONFIG_ALIAS_TOKEN } from './constants';
 import { SetupConfigOptions } from './vo/setup-config-options';
 import { getExistingFilePaths } from './utils/get-existing-file-paths';
 import type { DynamicModule, Type } from '@nestjs/common';
-import { fileLoader, TypedConfigModule } from '@aionx/nest-typed-config';
+import { fileLoader, TypedConfigModule } from '../core';
 
 export function setupYamlBaseConfigModule(
   baseDir: string,

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "nestjs-pino",
+  "steps": [
+    {
+      "file": "apps/boilerplate/src/app/app.module.ts",
+      "description": "nestjs-pino模块注册",
+      "line": 10
+    },
+    {
+      "file": "apps/boilerplate/src/main.ts",
+      "description": "通过调用 app.get(Logger)，你可以获取到 Logger 实例，并将其赋值给 logger 变量。接下来，调用 app.useLogger(logger) 方法，将获取到的 Logger 实例设置为应用程序的日志记录器。这意味着应用程序中的所有日志记录操作将使用这个 Logger 实例。",
+      "line": 23
+    },
+    {
+      "file": "apps/boilerplate/src/main.ts",
+      "description": "打印日志",
+      "line": 29
+    },
+    {
+      "file": "apps/boilerplate/src/main.ts",
+      "description": "当 bufferLogs 设置为 true 时，日志消息将被暂时存储（缓冲），而不是立即输出。这种机制通常用于在某些条件下（例如，系统初始化完成后）再批量输出日志，以避免在系统启动过程中产生过多的日志输出。\n这个设置项并不是nestjs-pino提供的，但是，建议设置为ture，默认值为false",
+      "line": 20
+    }
+  ]
+}

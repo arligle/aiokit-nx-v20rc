@@ -1,6 +1,6 @@
 {
   "name": "@aionx/source",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "$schema": "packages/nx/schemas/project-schema.json",
   "targets": {
     "local-registry": {
       "executor": "@nx/js:verdaccio",

@@ -1,5 +1,5 @@
 /**
- * Parts of this file come from the official config module for Nest.js
+ * 该文件的部分内容来自 Nest.js 的官方配置模块
  *
  * @see https://github.com/nestjs/config/blob/master/lib/config.module.ts
  */
@@ -12,7 +12,7 @@ import { debug } from '../utils/debug.util';
 
 export interface DotenvLoaderOptions {
   /**
-   * If set, use the separator to parse environment variables to objects.
+   * 如果设置，则使用分隔符将环境变量解析为对象。
    *
    * @example
    *
@@ -39,7 +39,7 @@ export interface DotenvLoaderOptions {
   separator?: string;
 
   /**
-   * If set, this function will transform all environment variable keys prior to parsing.
+   * 如果设置，此函数将在解析之前转换所有环境变量键。
    *
    * Be aware: If you transform multiple keys to the same value only one will remain!
    *

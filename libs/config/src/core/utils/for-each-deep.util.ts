@@ -1,5 +1,5 @@
 /**
- * Iterates over elements of collection invoking iteratee for each element.
+ * 迭代集合的元素，为每个元素调用 iteratee。
  * The iteratee is invoked with three arguments: (value, path).
  * path is an array containing keys of current value
  *

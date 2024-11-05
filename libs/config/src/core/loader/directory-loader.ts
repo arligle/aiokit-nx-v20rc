@@ -5,23 +5,23 @@ import fromPairs from 'lodash.frompairs';
 
 export interface DirectoryLoaderOptions extends OptionsSync {
   /**
-   * The directory containing all configuration files.
+   * 包含所有配置文件的目录.
    */
   directory: string;
   /**
-   * File regex to include.
+   * 要包含的文件正则表达式.
    */
   include?: RegExp;
   /**
-   * If "true", ignore environment variable substitution.
-   * Default: true
+   * 如果为“true”，则忽略环境变量替换。
+   *默认值：true
    */
   ignoreEnvironmentVariableSubstitution?: boolean;
 }
 
 /**
- * Directory loader loads configuration in a specific folder.
- * The basename of file will be used as configuration key, for the directory below:
+ * 目录加载器加载特定文件夹中的配置。
+ * 文件的基本名称将用作配置键，对于以下目录：
  *
  * ```
  * .
@@ -30,8 +30,8 @@ export interface DirectoryLoaderOptions extends OptionsSync {
  *    └── db.toml
  * ```
  *
- * The parsed config will be `{ app: "config in app.toml", db: "config in db.toml" }`
- * @param options directory loader options.
+ * 解析后的配置将是 `{ app: "config in app.toml", db: "config in db.toml" }`
+ * @param选项目录加载器选项.
  */
 export const directoryLoader = ({
   directory,

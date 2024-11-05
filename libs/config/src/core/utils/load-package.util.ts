@@ -4,6 +4,7 @@ const MISSING_REQUIRED_DEPENDENCY = (name: string, reason: string) =>
 export function loadPackage(packageName: string, context: string): any {
   try {
     return require(packageName);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     console.error(MISSING_REQUIRED_DEPENDENCY(packageName, context));
     process.exit(1);

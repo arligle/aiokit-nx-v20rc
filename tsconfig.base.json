@@ -21,7 +21,7 @@
     "paths": {
       "@aionx/bootstrap": ["libs/bootstrap/src/index.ts"],
       "@aionx/config": ["libs/config/src/index.ts"],
-      "@aionx/nest-typed-config": ["packages/nest-typed-config/src/index.ts"]
+      "@aionx/logger": ["libs/logger/src/index.ts"]
     }
   }
 }

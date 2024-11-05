@@ -30,7 +30,7 @@ export class TypedConfigModule {
 
   private static getDynamicModule(
     options: TypedConfigModuleOptions | TypedConfigModuleAsyncOptions,
-    rawConfig: Record<string, any>,
+    rawConfig: Record<string, any>, // 配置数据，键是字符串类型，值可以是任意类型
   ) {
     const {
       schema: Config,
@@ -39,8 +39,9 @@ export class TypedConfigModule {
       isGlobal = true,
       validate = this.validateWithClassValidator.bind(this),
     } = options;
-
+    // 传入的配置数据应当是一个对象
     if (typeof rawConfig !== 'object') {
+      console.log('配置应该是一个对象，接收到：${rawConfig}。请检查“load()”的返回值')
       throw new Error(
         `Configuration should be an object, received: ${rawConfig}. Please check the return value of \`load()\``,
       );
@@ -56,7 +57,7 @@ export class TypedConfigModule {
       exports: providers,
     };
   }
-
+  // 从配置加载器中获取原始配置数据
   private static getRawConfig(load: TypedConfigModuleOptions['load']) {
     if (Array.isArray(load)) {
       const config = {};
@@ -140,11 +141,12 @@ export class TypedConfigModule {
     });
     if (schemaErrors.length > 0) {
       const configErrorMessage = this.getConfigErrorMessage(schemaErrors);
+      console.log('配置参数验证未能通过！');
       throw new Error(configErrorMessage);
     }
     return config;
   }
-
+  // 格式化错误信息
   static getConfigErrorMessage(errors: ValidationError[]): string {
     const messages = this.formatValidationError(errors)
       .map(({ property, value, constraints }) => {
@@ -173,8 +175,8 @@ export class TypedConfigModule {
   }
 
   /**
-   * Transforms validation error object returned by class-validator to more
-   * readable error messages.
+   * 将类验证器返回的验证错误对象转换为 more
+   * 可读的错误消息。
    */
   private static formatValidationError(errors: ValidationError[]) {
     const result: {

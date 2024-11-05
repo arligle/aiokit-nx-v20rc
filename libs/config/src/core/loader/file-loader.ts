@@ -71,18 +71,18 @@ const getSearchOptions = (options: FileLoaderOptions) => {
 };
 
 /**
- * File loader loads configuration with `cosmiconfig` from file system.
+ * 文件加载器使用“cosmiconfig”从文件系统加载配置。
  *
- * It is designed to be easy to use by default:
- *  1. Searching for configuration file starts at `process.cwd()`, and continues
- *     to search up the directory tree until it finds some acceptable configuration.
- *  2. Various extensions are supported, such as `.json`, `.yaml`, `.toml`, `.js` and `.cjs`.
- *  3. Configuration base name defaults to .env (so the full name is `.env.json` or `.env.yaml`),
- *     separate file for each environment is also supported. For example, if current `NODE_ENV` is
- *     development, `.env.development.json` has higher priority over `.env.json`.
+ * 默认情况下它被设计为易于使用：
+ *  1.从Nodejs的当前工作目录`process.cwd()`开始搜索配置文件，并继续
+ *     搜索目录树，直到找到一些可接受的配置。
+ *  2. 支持各种扩展名，例如`.json`、`.yaml`、`.toml`、`.js`和`.cjs`。
+ *  3.配置基名称默认为.env（因此全名是`.env.json`或`.env.yaml`），
+ *     还支持每个环境的单独文件。例如，如果当前的“NODE_ENV”是
+ *     开发时，`.env.development.json` 的优先级高于 `.env.json`。
  *
  * @see https://github.com/davidtheclark/cosmiconfig
- * @param options cosmiconfig initialize options. See: https://github.com/davidtheclark/cosmiconfig#cosmiconfigoptions
+ * @param options cosmiconfig 初始化选项。请参阅：https://github.com/davidtheclark/cosmiconfig#cosmiconfigoptions
  */
 export const fileLoader = (
   options: FileLoaderOptions = {},
@@ -132,6 +132,7 @@ export const fileLoader = (
     const result = explorer.search(searchFrom);
 
     if (!result) {
+      console.log('查找配置文件的启始位置为 Node.js 的当前工作目录：'+ process.cwd());
       throw new Error(`Failed to find configuration file.`);
     }
 

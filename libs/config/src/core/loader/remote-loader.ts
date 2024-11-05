@@ -43,7 +43,7 @@ export interface RemoteLoaderOptions extends AxiosRequestConfigWithoutUrl {
 }
 
 /**
- * Async loader loads configuration at remote endpoint.
+ * 异步加载器在远程端点加载配置。
  *
  * @param url Remote location of configuration
  * @param options options to configure async loader, support all `axios` options
