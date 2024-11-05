@@ -1,6 +1,6 @@
 import { Allow, IsInt, IsString, Max, Min } from 'class-validator';
 // import { CorsConfig } from './cors.config';
-// import { ValidateNestedProperty } from '@aiokit/validation';
+// import { ValidateNestedProperty } from '@aionx/validation';
 
 export class AppConfig {
   @IsInt()

@@ -1,0 +1,16 @@
+{
+  "name": "@aionx/logger",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "class-validator": "^0.14.1",
+    "@nestjs/common": "^10.0.2",
+    "nestjs-cls": "^4.4.1",
+    "pino": "^9.5.0",
+    "rxjs": "^7.8.0",
+    "pino-http": "10.3.0"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts"
+}
