@@ -7,9 +7,12 @@
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
+import { Logger } from '@aionx/logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const logger = app.get(Logger);
+  app.useLogger(logger);
   // const globalPrefix = 'api';
   // app.setGlobalPrefix(globalPrefix);
   // const port = process.env.PORT || 3000;
@@ -19,8 +22,8 @@ async function bootstrap() {
   // );
   const server = await app.listen(0);
   const port = server.address().port;
-  console.log('Node.js 的当前工作目录:'+process.cwd());
-  console.log('当前文件所在目录：'+__dirname);
+  console.log('Node.js 的当前工作目录:' + process.cwd());
+  console.log('当前文件所在目录：' + __dirname);
   console.log(
     `\nApp successfully bootstrapped. You can try running:
 

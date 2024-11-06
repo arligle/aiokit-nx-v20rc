@@ -3,9 +3,8 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    }
+    { "path": "../../libs/config" },
+    { "path": "./tsconfig.app.json" }
   ],
   "compilerOptions": {
     "esModuleInterop": true

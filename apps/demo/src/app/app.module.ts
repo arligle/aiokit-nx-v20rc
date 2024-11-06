@@ -10,6 +10,7 @@ import { fileLoader, TypedConfigModule } from '@aionx/config';
   imports: [
 
     // setupLoggerModule(),
+    // LoggerModule.forRoot(),
     TypedConfigModule.forRoot({
       schema: RootConfig,
       load: fileLoader(),

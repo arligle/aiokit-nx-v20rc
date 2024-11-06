@@ -12,3 +12,4 @@ export {
 } from './lib/core/params';
 export * from './lib/config/logger';
 export * from './lib/utils/with-logger-context.decorator';
+export { setupLoggerModule } from './lib/module';

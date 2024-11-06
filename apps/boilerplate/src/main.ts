@@ -6,6 +6,7 @@ import {
 import { AppModule } from './app/app.module';
 import { AppConfig } from './config/app.config';
 import { Logger } from '@aionx/logger';
+// import RootConfig from './config/root.config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(

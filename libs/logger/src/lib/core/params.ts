@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   MiddlewareConfigProxy,
   ModuleMetadata,
@@ -10,7 +9,7 @@ export type PassedLogger = { logger: Logger };
 
 export interface Params {
   /**
-   * Optional parameters for `pino-http` module
+   * `pino-http` 模块的可选参数
    * @see https://github.com/pinojs/pino-http#pinohttpopts-stream
    */
   pinoHttp?: Options | DestinationStream | [Options, DestinationStream];

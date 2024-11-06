@@ -1,6 +1,12 @@
 import { PinoLogger } from "../core/PinoLogger";
 import { storage, Store } from "../core/storage";
-
+/**
+ * @description 为类方法添加了日志上下文管理功能，
+ * 使得在方法执行时能够自动创建和使用新的日志上下文，
+ * 从而实现更细粒度的日志记录和管理。
+ * @export
+ * @return {*}
+ */
 export function WithLoggerContext() {
   return function (
     _target: unknown,

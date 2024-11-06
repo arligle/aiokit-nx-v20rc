@@ -11,6 +11,7 @@
   },
   "include": ["src/**/*.ts", "../../packages/**/*.ts", "../../libs/**/*.ts"],
   "references": [
+    { "path": "../../libs/config/tsconfig.lib.json" },
     { "path": "../../libs/logger/tsconfig.lib.json" }
   ]
 }

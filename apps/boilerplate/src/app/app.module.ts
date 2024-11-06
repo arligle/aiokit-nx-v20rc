@@ -1,16 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AppConfig } from '../config/app.config';
 import { setupYamlBaseConfigModule } from '@aionx/config';
-import { LoggerModule } from '@aionx/logger';
+import { Logger, setupLoggerModule } from '@aionx/logger';
+import rootConfig from '../config/root.config';
 
 @Module({
   imports: [
-    LoggerModule.forRoot(),
-    setupYamlBaseConfigModule(__dirname, AppConfig),
+    setupLoggerModule(),
+    setupYamlBaseConfigModule(__dirname, rootConfig),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,Logger],
 })
 export class AppModule {}
