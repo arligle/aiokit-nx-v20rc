@@ -1,4 +1,6 @@
+import { ValidateNestedProperty } from '@aionx/config';
 import { Allow, IsInt, IsString, Max, Min } from 'class-validator';
+import { CorsConfig } from './cors.config';
 // import { CorsConfig } from './cors.config';
 // import { ValidateNestedProperty } from '@aionx/validation';
 
@@ -12,6 +14,6 @@ export class AppConfig {
   @Allow()
   prefix?: string;
 
-  // @ValidateNestedProperty({ classType: CorsConfig })
-  // public readonly cors!: CorsConfig;
+  @ValidateNestedProperty({ classType: CorsConfig })
+  public readonly cors!: CorsConfig;
 }
