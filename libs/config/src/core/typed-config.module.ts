@@ -141,9 +141,15 @@ export class TypedConfigModule {
     });
     if (schemaErrors.length > 0) {
       const configErrorMessage = this.getConfigErrorMessage(schemaErrors);
+      // TODO:
       console.log('配置参数验证未能通过！');
+      console.log(config)
       throw new Error(configErrorMessage);
     }
+    // TODO: 生产环境应当删除这段代码
+    console.log(`\n解析配置文件的信息，生产环境应当删除这段代码:\n`);
+    console.log(config);
+    console.log(`\n`);
     return config;
   }
   // 格式化错误信息

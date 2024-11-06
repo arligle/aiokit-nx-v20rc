@@ -90,6 +90,7 @@
     "nestjs-cls": "^4.4.1",
     "pino": "^9.5.0",
     "pino-http": "10.3.0",
+    "pino-pretty": "^11.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "set-value": "4.1.0"
